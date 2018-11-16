@@ -24,8 +24,8 @@ public class SpringbootSwaggerApplicationTests {
     @Test
     public void createUser() {
         User user = new User("张三", "123456", "杭州");
-        ResponseEntity<ResObject> entity = this.testRestTemplate.postForEntity("/user/create/user", user, ResObject.class);
-        System.out.println("==========> createUser: " + entity.getBody());
+        ResObject resObject = this.testRestTemplate.postForObject("/user/create/user", user, ResObject.class);
+        System.out.println("==========> createUser: " + resObject);
     }
 
     @Test
